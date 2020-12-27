@@ -242,4 +242,22 @@ public class StringUtil {
 		String[] sArray = sTemp.split(",");
 		return sArray;
 	}
+	
+	/**
+	 * 
+	 * 
+	 * @param stringArr 字符串数组
+	 * @return 数组的hashCode
+	 */
+	public static int hashCodeOfArray(String[] stringArr) {
+		if (stringArr == null) {
+			return 0;
+		}
+		int hashCode = 17;
+		for (int i = 0; i < stringArr.length; i++) {
+			String value = stringArr[i];
+			hashCode = hashCode * 31 + (value == null ? 0 : value.hashCode());
+		}
+		return hashCode;
+	}
 }
